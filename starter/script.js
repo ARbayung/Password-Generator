@@ -88,8 +88,30 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+let length = 0;
+
+function getLength() {
+  while((length < 10) || length > 64){
+
+    length = prompt("how long would you like your password");
+
+    if(length<10){
+      alert("password too short");
+    }
+    else if(length>64){
+      alert("password length too long");
+    }
+    else{
+      alert("password set! The length you desire is " + length);
+      
+    }
+
+  }
+}
+
 // Function to prompt user for password options
 function getPasswordOptions() {
+  getLength();
 
 }
 
@@ -116,3 +138,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+getPasswordOptions();
