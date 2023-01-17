@@ -109,9 +109,105 @@ function getLength() {
   }
 }
 
+let lowerCase = undefined;
+let upperCase = undefined;
+let num = undefined;
+let spec = undefined;
+
+var characterType = [lowerCase, upperCase, num, spec];
+let checker = false;
+
+function getChar() {
+  while( checker === false ){
+
+    alert("answer with y or n");
+
+    // getting character types
+    while(lowerCase ==  undefined){
+
+      let q1 = prompt("do you want lowercases? (y/n)");
+
+      if(q1 == "y"){
+        lowerCase = "yes";
+      }
+      else if(q1 == "n"){
+        lowerCase= "no";
+      }else{
+        alert("not the preferred letter")
+      }
+
+      }
+      while(upperCase ==  undefined){
+
+        
+
+        let q1 = prompt("do you want uppercases? (y/n)");
+    
+        if(q1 == "y"){
+          upperCase = "yes";
+        }
+        else if(q1 == "n"){
+          upperCase= "no";
+        }else{
+          alert("not the preferred letter")
+        }
+    
+      }
+      while(num ==  undefined){
+
+        let q1 = prompt("do you want numbers? (y/n)");
+    
+        if(q1 == "y"){
+          num = "yes";
+        }
+        else if(q1 == "n"){
+          num= "no";
+        }else{
+          alert("not the preferred letter")
+        }
+    
+      }
+      while(spec ==  undefined){
+
+        let q1 = prompt("do you want numbers? (y/n)");
+    
+        if(q1 == "y"){
+          spec = "yes";
+        }
+        else if(q1 == "n"){
+          spec = "no";
+        }else{
+          alert("not the preferred letter")
+        }
+    
+      }
+
+      if(characterType.includes("yes")){
+
+        checker = true;
+
+      } else {
+
+        checker = false;
+
+      }
+
+      if(checker === false){
+        lowerCase = undefined;
+        upperCase = undefined;
+        num = undefined;
+        spec = undefined;
+        alert("please select one option at least!")
+      } else {
+        alert("charcter types set!")
+      }
+    }
+}
+
 // Function to prompt user for password options
 function getPasswordOptions() {
   getLength();
+  getChar();
 
 }
 
